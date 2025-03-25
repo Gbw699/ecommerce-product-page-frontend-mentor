@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+// - Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+// - Weights: 400, 700
+// - Font size (paragraph): 16px
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+// ### Primary
+$Orange: hsl(26, 100%, 55%);
+$PaleOrange: hsl(25, 100%, 94%);
+
+// ### Neutral
+$VeryDarkBlue: hsl(220, 13%, 13%);
+$DarkGrayishBlue: hsl(219, 9%, 45%);
+$GrayishBlue: hsl(220, 14%, 75%);
+$LightGrayishBlue: hsl(223, 64%, 98%);
+$White: hsl(0, 0%, 100%);
+$Black: hsl(0, 0%, 0%);
+// (with 75% opacity for lightbox background)
+
+html,
+body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  font-variation-settings: "YOPQ" 300;
+}
