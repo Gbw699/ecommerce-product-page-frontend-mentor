@@ -2,13 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 
 .container {
-  margin: 1.5rem 1rem;
+  margin: 1rem 1rem;
   display: grid;
   grid-template-columns: 1fr 60% 1fr 1fr;
   align-items: center;
   .img-container {
     .img {
-      vertical-align: bottom;
+      vertical-align: middle;
     }
   }
   .ham-container {
