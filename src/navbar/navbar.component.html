@@ -1,5 +1,5 @@
 <nav class="container">
-  <div class="img-container ham-container">
+  <div class="img-container ham-container" (click)="toggleMenu()">
     <img
       class="img"
       src="./images/icon-menu.svg"
@@ -20,7 +20,7 @@
       height="auto"
     />
   </div>
-  <div class="img-container">
+  <div class="img-container avatar-container">
     <img
       class="img"
       src="./images/image-avatar.png"
@@ -28,5 +28,24 @@
       width="25"
       height="auto"
     />
+  </div>
+  <div class="off-screen-menu" #offScreenMenu>
+    <ul>
+      <li>
+        <button class="close-btn" (click)="toggleMenu()">
+          <img
+            src="./images/icon-close.svg"
+            alt="close icon"
+            width="auto"
+            height="auto"
+          />
+        </button>
+      </li>
+      <li class="link"><a href="#" (click)="toggleMenu()">Collections</a></li>
+      <li class="link"><a href="#" (click)="toggleMenu()">Men</a></li>
+      <li class="link"><a href="#" (click)="toggleMenu()">Women</a></li>
+      <li class="link"><a href="#" (click)="toggleMenu()">About</a></li>
+      <li class="link"><a href="#" (click)="toggleMenu()">Contact</a></li>
+    </ul>
   </div>
 </nav>

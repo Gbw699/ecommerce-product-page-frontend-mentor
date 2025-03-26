@@ -100,15 +100,11 @@
           padding: 0.5rem;
           display: flex;
         }
-        // .minus-btn {
-        // }
         .units {
           margin: 0;
           font-weight: 700;
           color: s.$VeryDarkBlue;
         }
-        // .plus-btn {
-        // }
       }
       .add-cart-btn {
         width: 100%;
@@ -124,6 +120,7 @@
         font-size: 16px;
         font-weight: 700;
         background-color: s.$Orange;
+        box-shadow: 0 10px 20px rgba($color: s.$Orange, $alpha: 0.3);
       }
     }
   }
