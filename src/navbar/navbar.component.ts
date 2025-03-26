@@ -1,16 +1,18 @@
-import { Component, viewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { OffScreenMenuComponent } from './off-screen-menu/off-screen-menu.component';
+import { OffScreenMenuService } from '../services/off-screen-menu.service';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [],
+  imports: [OffScreenMenuComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
-  offScreenMenu: any = viewChild('offScreenMenu');
+  constructor(private offScreenMenuService: OffScreenMenuService) {}
 
   toggleMenu() {
-    this.offScreenMenu()?.nativeElement.classList.toggle('open-menu');
+    this.offScreenMenuService.setMenuFlag(true);
   }
 }

@@ -1,0 +1,23 @@
+<div
+  class="off-screen-menu"
+  [class.open-menu]="menuFlag() === true"
+  #offScreenMenu
+>
+  <ul>
+    <li>
+      <button class="close-btn" (click)="toggleMenu()">
+        <img
+          src="./images/icon-close.svg"
+          alt="close icon"
+          width="auto"
+          height="auto"
+        />
+      </button>
+    </li>
+    <li class="link"><a href="#" (click)="toggleMenu()">Collections</a></li>
+    <li class="link"><a href="#" (click)="toggleMenu()">Men</a></li>
+    <li class="link"><a href="#" (click)="toggleMenu()">Women</a></li>
+    <li class="link"><a href="#" (click)="toggleMenu()">About</a></li>
+    <li class="link"><a href="#" (click)="toggleMenu()">Contact</a></li>
+  </ul>
+</div>
