@@ -1,0 +1,70 @@
+@use "../../styles.scss" as s;
+
+.container {
+  position: fixed;
+  max-width: 360px;
+  margin: 0.5rem;
+  .cart-container {
+    background-color: s.$White;
+    padding: 1.5rem 0;
+    border-radius: 10px;
+    .title {
+      margin: 0 1.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    hr {
+      margin: 1.5rem 0;
+      margin-top: 2rem;
+      border-color: rgba($color: s.$LightGrayishBlue, $alpha: 0.3);
+    }
+    .product-container {
+      display: grid;
+      grid-template-columns: 1fr 70% 1fr;
+      align-items: center;
+      margin: 0 1.5rem;
+      gap: 1rem;
+      color: s.$DarkGrayishBlue;
+      img {
+        &:first-child {
+          width: 3rem;
+          border-radius: 5px;
+        }
+        &:last-child {
+          width: 1 rem;
+        }
+      }
+      .price-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        .description {
+          margin: 0;
+        }
+        .price {
+          margin: 0;
+          .total {
+            font-weight: 700;
+            color: s.$VeryDarkBlue;
+          }
+        }
+      }
+    }
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      .btn {
+        font-family: "Kumbh Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        background-color: s.$Orange;
+        border: none;
+        padding: 1rem;
+        width: 100%;
+        margin: 0 1.5rem;
+        margin-top: 1.5rem;
+        border-radius: 10px;
+      }
+    }
+  }
+}
