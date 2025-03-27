@@ -37,7 +37,7 @@ export class CartComponent {
     const container = this.container()?.nativeElement;
     if (!container) return;
 
-    const { top, left, right, bottom } = container.getBoundingClientRect();
+    const { left, right, bottom } = container.getBoundingClientRect();
 
     if (
       event.clientX < left ||

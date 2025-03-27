@@ -24,6 +24,23 @@
     margin: 1rem 0;
     letter-spacing: -1px;
   }
+  .cart-img-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+    .cart-quantity {
+      position: absolute;
+      bottom: 0.8rem;
+      left: 0.6rem;
+      color: s.$White;
+      background-color: s.$Orange;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 0.05rem 0.5rem;
+      border-radius: 10px;
+    }
+  }
   .avatar-container {
     margin-right: 1rem;
   }

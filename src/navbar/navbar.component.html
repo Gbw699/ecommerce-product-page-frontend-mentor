@@ -11,7 +11,7 @@
 
   <h1 class="title">sneakers</h1>
 
-  <div class="img-container">
+  <div class="img-container cart-img-container">
     <img
       class="img"
       src="./images/icon-cart.svg"
@@ -20,6 +20,9 @@
       height="auto"
       (click)="toggleCart()"
     />
+    <div class="cart-quantity" (click)="toggleCart()">
+      {{ quantityOfProductsInsideCart() }}
+    </div>
   </div>
   <div class="img-container avatar-container">
     <img

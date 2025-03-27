@@ -5,7 +5,14 @@ import { IProduct } from '../interfaces/IProduct';
   providedIn: 'root',
 })
 export class CartProductsService {
-  cartProducts: WritableSignal<IProduct[]> = signal([]);
+  cartProducts: WritableSignal<IProduct[]> = signal([
+    {
+      img: './images/image-product-1-thumbnail.jpg',
+      description: 'Fall Limited Edition Sneakers',
+      price: 125,
+      quantity: 3,
+    },
+  ]);
 
   constructor() {}
 
