@@ -1,3 +1,4 @@
+@if (cartProducts().length > 0) {
 <article class="container" [class.open-cart]="cartFlag() === true" #container>
   <div class="cart-container">
     <h2 class="title">Cart</h2>
@@ -10,8 +11,19 @@
         height="auto"
       />
       <div class="price-container">
-        <p class="description">Fall Limited Edition Sneakers</p>
-        <p class="price">$125.00 x 3 <span class="total">$375.00</span></p>
+        <p class="description">
+          {{ cartProducts()[0].description }}
+        </p>
+        <p class="price">
+          ${{ cartProducts()[0].price }} x
+          {{ cartProducts()[cartProducts().length - 1].quantity }}
+          <span class="total"
+            >${{
+              cartProducts()[0].price *
+                cartProducts()[cartProducts().length - 1].quantity
+            }}</span
+          >
+        </p>
       </div>
       <img
         src="./images/icon-delete.svg"
@@ -25,3 +37,4 @@
     </div>
   </div>
 </article>
+}

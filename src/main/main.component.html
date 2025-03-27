@@ -42,7 +42,7 @@
     </div>
     <div class="btn-container">
       <div class="units-container">
-        <button class="minus-btn">
+        <button class="minus-btn" (click)="changeQuantity('decrease')">
           <img
             src="./images/icon-minus.svg"
             alt="minus icon"
@@ -50,8 +50,8 @@
             height="auto"
           />
         </button>
-        <p class="units">0</p>
-        <button class="plus-btn">
+        <p class="units">{{ quantity() }}</p>
+        <button class="plus-btn" (click)="changeQuantity('increase')">
           <img
             src="./images/icon-plus.svg"
             alt="plus icon"
@@ -60,7 +60,7 @@
           />
         </button>
       </div>
-      <button class="add-cart-btn">
+      <button class="add-cart-btn" (click)="addToCart()">
         <img
           src="./images/icon-cart.svg"
           alt="cart icon"

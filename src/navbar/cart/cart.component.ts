@@ -1,5 +1,15 @@
-import { Component, computed, HostListener, viewChild } from '@angular/core';
+import {
+  Component,
+  computed,
+  HostListener,
+  Signal,
+  viewChild,
+} from '@angular/core';
+
 import { CartService } from '../../services/cart.service';
+import { CartProductsService } from '../../services/cart-products.service';
+
+import { IProduct } from '../../interfaces/IProduct';
 
 @Component({
   selector: 'app-cart',
@@ -12,9 +22,15 @@ export class CartComponent {
   cartFlag = computed(() => {
     return this.cartService.cartFlag();
   });
+  cartProducts: Signal<IProduct[]> = computed(() => {
+    return this.cartProductsService.cartProducts();
+  });
   container: any = viewChild('container');
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private cartProductsService: CartProductsService
+  ) {}
 
   @HostListener('document:click', ['$event'])
   closeCart(event: any) {

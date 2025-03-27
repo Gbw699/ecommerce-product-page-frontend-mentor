@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { OffScreenMenuComponent } from './off-screen-menu/off-screen-menu.component';
+
 import { OffScreenMenuService } from '../services/off-screen-menu.service';
-import { CartComponent } from './cart/cart.component';
 import { CartService } from '../services/cart.service';
+
+import { OffScreenMenuComponent } from './off-screen-menu/off-screen-menu.component';
+import { CartComponent } from './cart/cart.component';
 
 @Component({
   selector: 'app-navbar',
