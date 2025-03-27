@@ -20,9 +20,11 @@
       height="auto"
       (click)="toggleCart()"
     />
+    @if (quantityOfProductsInsideCart() > 0) {
     <div class="cart-quantity" (click)="toggleCart()">
       {{ quantityOfProductsInsideCart() }}
     </div>
+    }
   </div>
   <div class="img-container avatar-container">
     <img

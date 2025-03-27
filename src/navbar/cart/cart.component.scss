@@ -3,6 +3,7 @@
 .container {
   position: absolute;
   max-width: 360px;
+  min-height: 250px;
   margin: 0.5rem;
   visibility: hidden;
   .cart-container {
@@ -49,6 +50,7 @@
           .total {
             font-weight: 700;
             color: s.$VeryDarkBlue;
+            margin-left: 0.5rem;
           }
         }
       }
@@ -67,6 +69,17 @@
         margin: 0 1.5rem;
         margin-top: 1.5rem;
         border-radius: 10px;
+      }
+    }
+    .empty-cart {
+      display: grid;
+      min-width: 360px;
+      min-height: 7rem;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      align-items: center;
+      p {
+        text-align: center;
       }
     }
   }

@@ -16,9 +16,11 @@ import { CartProductsService } from '../services/cart-products.service';
 })
 export class NavbarComponent {
   quantityOfProductsInsideCart: Signal<number> = computed(() => {
-    return this.cartProductsService.cartProducts()[
-      this.cartProductsService.cartProducts().length - 1
-    ]?.quantity;
+    return this.cartProductsService.cartProducts().length !== 0
+      ? this.cartProductsService.cartProducts()[
+          this.cartProductsService.cartProducts().length - 1
+        ]?.quantity
+      : 0;
   });
 
   constructor(
@@ -28,14 +30,13 @@ export class NavbarComponent {
   ) {}
 
   toggleMenu() {
+    console.log('hola');
+
     this.offScreenMenuService.setMenuFlag(true);
     this.cartService.setCartFlag(false);
   }
 
   toggleCart() {
-    console.log('hola');
-    console.log(this.cartService.cartFlag());
-
     this.cartService.setCartFlag(!this.cartService.cartFlag());
   }
 }

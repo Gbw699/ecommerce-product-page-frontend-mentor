@@ -10,11 +10,12 @@ import { CartService } from '../../services/cart.service';
 import { CartProductsService } from '../../services/cart-products.service';
 
 import { IProduct } from '../../interfaces/IProduct';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })
@@ -23,7 +24,9 @@ export class CartComponent {
     return this.cartService.cartFlag();
   });
   cartProducts: Signal<IProduct[]> = computed(() => {
-    return this.cartProductsService.cartProducts();
+    return this.cartProductsService.cartProducts()
+      ? this.cartProductsService.cartProducts()
+      : ([] as IProduct[]);
   });
   container: any = viewChild('container');
 
@@ -46,5 +49,10 @@ export class CartComponent {
     ) {
       this.cartService.setCartFlag(false);
     }
+  }
+
+  handleCheckout() {
+    this.cartService.setCartFlag(false);
+    this.cartProductsService.clearCart();
   }
 }

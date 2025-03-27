@@ -24,4 +24,8 @@ export class CartProductsService {
     this.cartProducts.set([...newCartProducts]);
     console.log(this.cartProducts());
   }
+
+  clearCart() {
+    this.cartProducts.set([]);
+  }
 }
