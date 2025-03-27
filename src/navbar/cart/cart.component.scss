@@ -1,13 +1,16 @@
 @use "../../styles.scss" as s;
 
 .container {
-  position: fixed;
+  position: absolute;
   max-width: 360px;
   margin: 0.5rem;
+  visibility: hidden;
   .cart-container {
     background-color: s.$White;
     padding: 1.5rem 0;
     border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
     .title {
       margin: 0 1.5rem;
       font-size: 1rem;
@@ -66,5 +69,11 @@
         border-radius: 10px;
       }
     }
+  }
+}
+.open-cart {
+  visibility: visible;
+  .cart-container {
+    opacity: 1;
   }
 }
