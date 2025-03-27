@@ -1,4 +1,10 @@
-import { Component, computed, Signal, viewChild } from '@angular/core';
+import {
+  Component,
+  computed,
+  HostListener,
+  Signal,
+  viewChild,
+} from '@angular/core';
 import { OffScreenMenuService } from '../../services/off-screen-menu.service';
 
 @Component({
@@ -16,8 +22,19 @@ export class OffScreenMenuComponent {
 
   constructor(private offScreenMenuService: OffScreenMenuService) {}
 
+  @HostListener('document:click', ['$event'])
+  closeCart(event: any) {
+    const container = this.offScreenMenu()?.nativeElement.firstChild;
+    if (!container) return;
+
+    const { left, right } = container.getBoundingClientRect();
+
+    if (event.clientX > right && left === 0) {
+      this.offScreenMenuService.setMenuFlag(false);
+    }
+  }
+
   toggleMenu() {
-    this.offScreenMenu()?.nativeElement.classList.toggle('open-menu');
     this.offScreenMenuService.setMenuFlag(false);
   }
 }
