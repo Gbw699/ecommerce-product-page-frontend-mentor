@@ -2,10 +2,37 @@
 
 .container {
   margin-bottom: 4rem;
+  @media (min-width: s.$ViewPortBreakpoint) {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+    gap: 5rem;
+  }
   .product-img-container {
     position: relative;
+    @media (min-width: s.$ViewPortBreakpoint) {
+      max-width: 560px;
+    }
     .img-container {
       display: block;
+      aspect-ratio: 1/1;
+      img {
+        animation: fadeIn 0.2s ease-in-out;
+        @media (min-width: s.$ViewPortBreakpoint) {
+          border-radius: 10px;
+        }
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
     }
     .btn-container {
       position: absolute;
@@ -15,7 +42,9 @@
       width: 100%;
       transform: translateY(-50%);
       top: 50%;
-      // margin: 0 1rem;
+      @media (min-width: s.$ViewPortBreakpoint) {
+        display: none;
+      }
       .btn {
         display: flex;
         justify-content: center;
@@ -38,6 +67,16 @@
         }
       }
     }
+    .thumbnails-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      @media (max-width: (s.$ViewPortBreakpoint - 1px)) {
+        display: none;
+      }
+    }
   }
   .product-info-container {
     padding: 1.5rem;
@@ -53,6 +92,9 @@
       font-size: 1.8rem;
       font-weight: 700;
       color: s.$VeryDarkBlue;
+      @media (min-width: s.$ViewPortBreakpoint) {
+        font-size: 2rem;
+      }
     }
     .description {
       line-height: 1.5rem;
@@ -64,10 +106,16 @@
       grid-template-columns: 1fr 25% 1fr;
       align-items: center;
       gap: 1rem;
+      @media (min-width: s.$ViewPortBreakpoint) {
+        grid-template-columns: 1fr 75%;
+      }
       .price {
         font-size: 1.8rem;
         font-weight: 700;
         color: s.$VeryDarkBlue;
+        @media (min-width: s.$ViewPortBreakpoint) {
+          margin-bottom: 0;
+        }
       }
       .discount {
         background-color: s.$VeryDarkBlue;
@@ -76,18 +124,30 @@
         width: min-content;
         padding: 0.2rem 0.5rem;
         border-radius: 7px;
+        @media (min-width: s.$ViewPortBreakpoint) {
+          margin-top: 1.5rem;
+          margin-bottom: 0;
+        }
       }
       .original-price {
         justify-self: end;
         font-weight: 700;
         color: s.$DarkGrayishBlue;
         text-decoration: line-through;
+        @media (min-width: s.$ViewPortBreakpoint) {
+          justify-self: start;
+          margin-top: 0;
+          margin-bottom: 2rem;
+        }
       }
     }
     .btn-container {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
+      @media (min-width: s.$ViewPortBreakpoint) {
+        grid-template-columns: 1fr 55%;
+      }
       .units-container {
         background-color: s.$LightGrayishBlue;
         display: flex;
@@ -95,6 +155,12 @@
         align-items: center;
         padding: 1rem;
         border-radius: 10px;
+        @media (min-width: s.$ViewPortBreakpoint) {
+          padding: 1rem 0;
+        }
+        @media (min-width: (s.$ViewPortBreakpointDesktop + 200px)) {
+          padding: 1rem;
+        }
         button {
           border: none;
           background-color: transparent;

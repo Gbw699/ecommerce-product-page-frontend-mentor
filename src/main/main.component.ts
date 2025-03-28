@@ -10,9 +10,20 @@ import { CartProductsService } from '../services/cart-products.service';
   styleUrl: './main.component.scss',
 })
 export class MainComponent {
+  imgIndex: WritableSignal<number> = signal(1);
   quantity: WritableSignal<number> = signal(0);
 
   constructor(private cartProductService: CartProductsService) {}
+
+  handleImgChange(action: string) {
+    action === 'next'
+      ? this.imgIndex() === 4
+        ? null
+        : this.imgIndex.set(this.imgIndex() + 1)
+      : this.imgIndex() === 1
+      ? null
+      : this.imgIndex.set(this.imgIndex() - 1);
+  }
 
   changeQuantity(action: string) {
     if (action === 'increase') {

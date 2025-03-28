@@ -1,0 +1,7 @@
+@use "../styles.scss" as s;
+
+main {
+  @media (min-width: s.$ViewPortBreakpoint) {
+    height: 100%;
+  }
+}
