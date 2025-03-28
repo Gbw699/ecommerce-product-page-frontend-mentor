@@ -51,6 +51,11 @@ export class CartComponent {
     }
   }
 
+  handleDelete() {
+    this.cartService.setCartFlag(false);
+    this.cartProductsService.clearCart();
+  }
+
   handleCheckout() {
     this.cartService.setCartFlag(false);
     this.cartProductsService.clearCart();
