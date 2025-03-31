@@ -37,12 +37,21 @@ body {
   @media (min-width: $ViewPortBreakpoint) {
     height: 100%;
   }
+}
+body {
   app-root {
-    @media (min-width: $ViewPortBreakpointDesktop) {
+    @media (min-width: $ViewPortBreakpoint) {
+      width: 100%;
+      height: 100%;
       display: flex;
       flex-direction: column;
       margin: 0 auto;
-      height: 100%;
+    }
+    @media (min-width: $ViewPortBreakpointDesktop) {
+      // display: flex;
+      // flex-direction: column;
+      // margin: 0 auto;
+      // height: 100%;
       max-width: 73%;
     }
   }

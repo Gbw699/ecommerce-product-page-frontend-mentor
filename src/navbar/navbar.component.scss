@@ -7,6 +7,12 @@
   display: grid;
   grid-template-columns: 1fr 60% 1fr 1fr;
   align-items: center;
+  @media (min-width: s.$ViewPortBreakpoint) {
+    grid-template-columns: 0.6fr 60% 0.2fr 0.2fr;
+  }
+  @media (min-width: s.$ViewPortBreakpointDesktop) {
+    grid-template-columns: 0.4fr 60% 0.3fr 0.3fr;
+  }
   .img-container {
     .img {
       vertical-align: middle;
@@ -15,6 +21,9 @@
   .ham-container {
     margin-left: 1rem;
     justify-self: center;
+    @media (min-width: s.$ViewPortBreakpoint) {
+      display: none;
+    }
   }
   .title {
     font-family: "Poppins", sans-serif;
@@ -23,12 +32,42 @@
     font-size: 1.5rem;
     margin: 1rem 0;
     letter-spacing: -1px;
+    @media (min-width: s.$ViewPortBreakpoint) {
+      margin-left: 1rem;
+    }
+    @media (min-width: s.$ViewPortBreakpointDesktop) {
+      margin-left: 0;
+    }
+  }
+  .menu-container {
+    display: none;
+    @media (min-width: s.$ViewPortBreakpoint) {
+      display: block;
+    }
+    ul {
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      li {
+        list-style-type: none;
+        a {
+          text-decoration: none;
+          color: s.$DarkGrayishBlue;
+        }
+      }
+    }
   }
   .cart-img-container {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     position: relative;
+    @media (min-width: s.$ViewPortBreakpoint) {
+      justify-self: center;
+    }
+    @media (min-width: s.$ViewPortBreakpointDesktop) {
+      justify-self: end;
+    }
     .cart-quantity {
       position: absolute;
       bottom: 0.8rem;
@@ -43,10 +82,24 @@
   }
   .avatar-container {
     margin-right: 1rem;
+    @media (min-width: s.$ViewPortBreakpoint) {
+      justify-self: end;
+      margin-right: 1rem;
+      img {
+        width: 2.5rem;
+      }
+    }
+    @media (min-width: s.$ViewPortBreakpointDesktop) {
+      margin-right: 0;
+    }
   }
   app-off-screen-menu {
     position: fixed;
     align-self: baseline;
     height: 100%;
   }
+}
+hr {
+  border-color: rgba($color: s.$Black, $alpha: 0.1);
+  margin: 0;
 }
