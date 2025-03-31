@@ -1,6 +1,13 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import {
+  Component,
+  computed,
+  Signal,
+  signal,
+  WritableSignal,
+} from '@angular/core';
 
 import { CartProductsService } from '../services/cart-products.service';
+import { MainImgService } from '../services/main-img.service';
 
 @Component({
   selector: 'app-main',
@@ -10,19 +17,28 @@ import { CartProductsService } from '../services/cart-products.service';
   styleUrl: './main.component.scss',
 })
 export class MainComponent {
-  imgIndex: WritableSignal<number> = signal(1);
+  imgIndex: Signal<number> = computed(() => {
+    return this.mainImgService.imgIndex();
+  });
   quantity: WritableSignal<number> = signal(0);
 
-  constructor(private cartProductService: CartProductsService) {}
+  constructor(
+    private cartProductService: CartProductsService,
+    private mainImgService: MainImgService
+  ) {}
 
   handleImgChange(action: string) {
     action === 'next'
       ? this.imgIndex() === 4
         ? null
-        : this.imgIndex.set(this.imgIndex() + 1)
+        : this.mainImgService.setImgIndex(this.imgIndex() + 1)
       : this.imgIndex() === 1
       ? null
-      : this.imgIndex.set(this.imgIndex() - 1);
+      : this.mainImgService.setImgIndex(this.imgIndex() - 1);
+  }
+
+  handleImgChangeWithThumbnail(index: number) {
+    this.mainImgService.setImgIndex(index);
   }
 
   changeQuantity(action: string) {
