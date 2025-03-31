@@ -1,17 +1,33 @@
 @use "../../styles.scss" as s;
 
 .container {
-  position: absolute;
-  max-width: 360px;
+  position: fixed;
+  right: 0;
   min-height: 250px;
-  margin: 0.5rem;
+  margin: 2rem 0.5rem 0.5rem 0.5rem;
+  border-radius: 10px;
+  box-shadow: 0 20px 15px rgba($color: s.$Black, $alpha: 0.2);
+  background-color: s.$White;
   visibility: hidden;
+  @media (min-width: s.$ViewPortBreakpoint) {
+    position: absolute;
+    width: max-content;
+    right: -4rem;
+    margin-top: 0.7rem;
+  }
+  @media (min-width: s.$ViewPortBreakpointDesktop) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
   .cart-container {
     background-color: s.$White;
     padding: 1.5rem 0;
     border-radius: 10px;
     opacity: 0;
     transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    @media (min-width: s.$ViewPortBreakpoint) {
+      padding: 1rem 0 1.5rem 0;
+    }
     .title {
       margin: 0 1.5rem;
       font-size: 1rem;

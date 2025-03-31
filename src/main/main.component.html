@@ -1,37 +1,40 @@
 <div class="container">
   <section class="product-img-container">
     <div class="img-container">
-      @if (imgIndex() === 1 ) {
-      <img
-        src="./images/image-product-1.jpg"
-        alt="Product image 1"
-        width="100%"
-        height="auto"
-      />
-      } @if (imgIndex() === 2 ) {
-      <img
-        src="./images/image-product-2.jpg"
-        alt="Product image 2"
-        width="100%"
-        height="auto"
-      />
-      }@if (imgIndex() === 3 ) {
-      <img
-        src="./images/image-product-3.jpg"
-        alt="Product image 3"
-        width="100%"
-        height="auto"
-      />
-      }@if (imgIndex() === 4 ) {
-      <img
-        src="./images/image-product-4.jpg"
-        alt="Product image 4"
-        width="100%"
-        height="auto"
-      />
-      }
+      <button class="img-btn">
+        @if (imgIndex() === 1 ) {
+        <img
+          src="./images/image-product-1.jpg"
+          alt="Product image 1"
+          width="100%"
+          height="auto"
+        />
+        } @if (imgIndex() === 2 ) {
+        <img
+          src="./images/image-product-2.jpg"
+          alt="Product image 2"
+          width="100%"
+          height="auto"
+        />
+        }@if (imgIndex() === 3 ) {
+        <img
+          src="./images/image-product-3.jpg"
+          alt="Product image 3"
+          width="100%"
+          height="auto"
+        />
+        }@if (imgIndex() === 4 ) {
+        <img
+          src="./images/image-product-4.jpg"
+          alt="Product image 4"
+          width="100%"
+          height="auto"
+        />
+        }
+      </button>
     </div>
     <div class="btn-container">
+      @if (imgIndex() > 1) {
       <button class="btn" (click)="handleImgChange('previous')">
         <img
           src="./images/icon-previous.svg"
@@ -40,6 +43,10 @@
           height="auto"
         />
       </button>
+      }
+      <div></div>
+      @if (imgIndex() < 4) {
+
       <button class="btn" (click)="handleImgChange('next')">
         <img
           src="./images/icon-next.svg"
@@ -48,39 +55,64 @@
           height="auto"
         />
       </button>
+      }
     </div>
     <div class="thumbnails-container">
       <div class="img-container">
-        <img
-          src="./images/image-product-1-thumbnail.jpg"
-          alt="thumbnail 1"
-          width="100%"
-          height="auto"
-        />
+        <button
+          class="img-btn"
+          [class.selected]="imgIndex() === 1"
+          (click)="handleImgChangeWithThumbnail(1)"
+        >
+          <img
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="thumbnail 1"
+            width="100%"
+            height="auto"
+          />
+        </button>
       </div>
       <div class="img-container">
-        <img
-          src="./images/image-product-2-thumbnail.jpg"
-          alt="thumbnail 2"
-          width="100%"
-          height="auto"
-        />
+        <button
+          class="img-btn"
+          [class.selected]="imgIndex() === 2"
+          (click)="handleImgChangeWithThumbnail(2)"
+        >
+          <img
+            src="./images/image-product-2-thumbnail.jpg"
+            alt="thumbnail 2"
+            width="100%"
+            height="auto"
+          />
+        </button>
       </div>
       <div class="img-container">
-        <img
-          src="./images/image-product-3-thumbnail.jpg"
-          alt="thumbnail 3"
-          width="100%"
-          height="auto"
-        />
+        <button
+          class="img-btn"
+          [class.selected]="imgIndex() === 3"
+          (click)="handleImgChangeWithThumbnail(3)"
+        >
+          <img
+            src="./images/image-product-3-thumbnail.jpg"
+            alt="thumbnail 3"
+            width="100%"
+            height="auto"
+          />
+        </button>
       </div>
       <div class="img-container">
-        <img
-          src="./images/image-product-4-thumbnail.jpg"
-          alt="thumbnail 4"
-          width="100%"
-          height="auto"
-        />
+        <button
+          class="img-btn"
+          [class.selected]="imgIndex() === 4"
+          (click)="handleImgChangeWithThumbnail(4)"
+        >
+          <img
+            src="./images/image-product-4-thumbnail.jpg"
+            alt="thumbnail 4"
+            width="100%"
+            height="auto"
+          />
+        </button>
       </div>
     </div>
   </section>

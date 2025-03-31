@@ -30,8 +30,6 @@ export class NavbarComponent {
   ) {}
 
   toggleMenu() {
-    console.log('hola');
-
     this.offScreenMenuService.setMenuFlag(true);
     this.cartService.setCartFlag(false);
   }

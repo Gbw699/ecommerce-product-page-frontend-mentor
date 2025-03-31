@@ -14,15 +14,28 @@
   .product-img-container {
     position: relative;
     @media (min-width: s.$ViewPortBreakpoint) {
-      max-width: 560px;
+      max-width: 500px;
     }
     .img-container {
       display: block;
       aspect-ratio: 1/1;
-      img {
-        animation: fadeIn 0.2s ease-in-out;
-        @media (min-width: s.$ViewPortBreakpoint) {
-          border-radius: 10px;
+      .img-btn {
+        background-color: transparent;
+        padding: 0;
+        height: 100%;
+        border-radius: 13px;
+        border: 2px solid transparent;
+        img {
+          animation: fadeIn 0.2s ease-in-out;
+          @media (min-width: s.$ViewPortBreakpoint) {
+            border-radius: 10px;
+          }
+        }
+      }
+      .selected {
+        border-color: s.$Orange;
+        img {
+          opacity: 0.3;
         }
       }
       @keyframes fadeIn {
