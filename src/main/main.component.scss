@@ -24,13 +24,16 @@
         padding: 0;
         height: 100%;
         border-radius: 13px;
-        border: 2px solid transparent;
+        border: none;
         img {
           animation: fadeIn 0.2s ease-in-out;
           @media (min-width: s.$ViewPortBreakpoint) {
             border-radius: 10px;
           }
         }
+      }
+      .btn-transparent-border {
+        border: 2px solid transparent;
       }
       .selected {
         border-color: s.$Orange;
