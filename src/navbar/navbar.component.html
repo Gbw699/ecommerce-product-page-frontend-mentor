@@ -9,7 +9,7 @@
     />
   </div>
 
-  <h1 class="title">sneakers</h1>
+  <h1 class="title"><a href="#">sneakers</a></h1>
 
   <div class="menu-container">
     <ul>
@@ -21,23 +21,24 @@
     </ul>
   </div>
 
-  <div class="img-container cart-img-container">
-    <img
-      class="img"
-      src="./images/icon-cart.svg"
-      alt="Cart icon"
-      width="auto"
-      height="auto"
-      (click)="toggleCart()"
-    />
-    @if (quantityOfProductsInsideCart() > 0) {
-    <div class="cart-quantity" (click)="toggleCart()">
-      {{ quantityOfProductsInsideCart() }}
-    </div>
-    }
+  <div>
+    <button class="img-container cart-img-container" (click)="toggleCart()">
+      <img
+        class="img"
+        src="./images/icon-cart.svg"
+        alt="Cart icon"
+        width="auto"
+        height="auto"
+      />
+      @if (quantityOfProductsInsideCart() > 0) {
+      <div class="cart-quantity">
+        {{ quantityOfProductsInsideCart() }}
+      </div>
+      }
+    </button>
     <app-cart></app-cart>
   </div>
-  <div class="img-container avatar-container">
+  <button class="img-container avatar-container">
     <img
       class="img"
       src="./images/image-avatar.png"
@@ -45,7 +46,7 @@
       width="25"
       height="auto"
     />
-  </div>
+  </button>
   <app-off-screen-menu></app-off-screen-menu>
 </nav>
 <hr />

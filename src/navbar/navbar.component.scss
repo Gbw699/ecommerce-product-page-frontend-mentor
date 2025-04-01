@@ -38,50 +38,108 @@
     @media (min-width: s.$ViewPortBreakpointDesktop) {
       margin-left: 0;
     }
+    a {
+      text-decoration: none;
+      color: s.$VeryDarkBlue;
+      transition: all 0.1s;
+      &:hover {
+        cursor: pointer;
+        color: s.$Orange;
+      }
+      &:focus {
+        outline: none;
+        color: s.$Orange;
+      }
+    }
   }
   .menu-container {
     display: none;
     @media (min-width: s.$ViewPortBreakpoint) {
       display: block;
+      height: 100%;
     }
     ul {
       display: flex;
+      margin: 0;
+      align-items: end;
       gap: 1rem;
       padding: 0;
+      height: 100%;
       li {
         list-style-type: none;
         a {
+          padding: 1.5rem 0;
           text-decoration: none;
           color: s.$DarkGrayishBlue;
+          display: block;
+          height: 100%;
+          border-top: 3px solid transparent;
+          border-bottom: 3px solid transparent;
+          transition: all 0.2s;
+          &:hover {
+            cursor: pointer;
+            color: s.$VeryDarkBlue;
+            border-bottom: 3px solid s.$Orange;
+          }
+          &:focus {
+            outline: none;
+            color: s.$VeryDarkBlue;
+            border-bottom: 3px solid s.$Orange;
+          }
         }
       }
     }
   }
-  .cart-img-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+  .img-container {
+    background-color: transparent;
+    border: none;
+  }
+  div {
     position: relative;
-    @media (min-width: s.$ViewPortBreakpoint) {
-      justify-self: center;
-    }
-    @media (min-width: s.$ViewPortBreakpointDesktop) {
-      justify-self: end;
-    }
-    .cart-quantity {
-      position: absolute;
-      bottom: 0.8rem;
-      left: 0.6rem;
-      color: s.$White;
-      background-color: s.$Orange;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 0.05rem 0.5rem;
-      border-radius: 10px;
+    .cart-img-container {
+      display: grid;
+      position: relative;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      padding: 1rem;
+      &:hover {
+        cursor: pointer;
+      }
+      &:focus {
+        outline-color: s.$Orange;
+      }
+      @media (min-width: s.$ViewPortBreakpoint) {
+        justify-self: center;
+      }
+      @media (min-width: s.$ViewPortBreakpointDesktop) {
+        justify-self: end;
+      }
+      .cart-quantity {
+        position: absolute;
+        bottom: 1.8rem;
+        left: 1.6rem;
+        color: s.$White;
+        background-color: s.$Orange;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 0.05rem 0.5rem;
+        border-radius: 10px;
+      }
     }
   }
   .avatar-container {
     margin-right: 1rem;
+    outline: 2px solid transparent;
+    padding: 0;
+    border-radius: 50%;
+    transition: all 0.1s;
+    &:hover {
+      cursor: pointer;
+      outline: 2px solid s.$Orange;
+    }
+    &:focus {
+      outline: 2px solid s.$Orange;
+    }
     @media (min-width: s.$ViewPortBreakpoint) {
       justify-self: end;
       margin-right: 1rem;
