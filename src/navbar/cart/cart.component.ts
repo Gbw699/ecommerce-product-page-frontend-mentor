@@ -43,9 +43,9 @@ export class CartComponent {
     const { left, right, bottom } = container.getBoundingClientRect();
 
     if (
-      event.clientX < left ||
-      event.clientX > right ||
-      event.clientY > bottom
+      (event.clientX < left && event.clientX !== 0) ||
+      (event.clientX > right && event.clientX !== 0) ||
+      (event.clientY > bottom && event.clientY !== 0)
     ) {
       this.cartService.setCartFlag(false);
     }

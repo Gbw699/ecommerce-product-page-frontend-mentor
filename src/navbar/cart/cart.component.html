@@ -4,12 +4,14 @@
     <hr />
     @if (cartProducts().length > 0) {
     <div class="product-container">
-      <img
-        src="./images/image-product-1-thumbnail.jpg"
-        alt="product image"
-        width="auto"
-        height="auto"
-      />
+      <div class="img-container">
+        <img
+          src="./images/image-product-1-thumbnail.jpg"
+          alt="product image"
+          width="auto"
+          height="auto"
+        />
+      </div>
       <div class="price-container">
         <p class="description">
           {{ cartProducts()[0].description }}
@@ -23,13 +25,14 @@
           }}</span>
         </p>
       </div>
-      <img
-        src="./images/icon-delete.svg"
-        alt="delete icon"
-        width="auto"
-        height="auto"
-        (click)="handleDelete()"
-      />
+      <button class="img-container" (click)="handleDelete()">
+        <img
+          src="./images/icon-delete.svg"
+          alt="delete icon"
+          width="auto"
+          height="auto"
+        />
+      </button>
     </div>
     <div class="btn-container">
       <button class="btn" (click)="handleCheckout()">Checkout</button>

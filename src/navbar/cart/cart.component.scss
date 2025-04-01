@@ -45,13 +45,28 @@
       margin: 0 1.5rem;
       gap: 1rem;
       color: s.$DarkGrayishBlue;
-      img {
+      .img-container {
+        border: none;
+        background-color: transparent;
         &:first-child {
-          width: 3rem;
-          border-radius: 5px;
+          img {
+            width: 3rem;
+            border-radius: 5px;
+          }
         }
         &:last-child {
-          width: 1 rem;
+          padding: 0.3rem;
+          outline-color: transparent;
+          transition: all 0.2s;
+          &:focus {
+            outline-color: s.$Orange;
+          }
+          img {
+            width: 1rem;
+            &:hover {
+              cursor: pointer;
+            }
+          }
         }
       }
       .price-container {
@@ -85,6 +100,15 @@
         margin: 0 1.5rem;
         margin-top: 1.5rem;
         border-radius: 10px;
+        transition: all 0.2s;
+        &:hover {
+          cursor: pointer;
+          background-color: rgba($color: s.$Orange, $alpha: 0.7);
+        }
+        &:focus {
+          outline: none;
+          background-color: rgba($color: s.$Orange, $alpha: 0.7);
+        }
       }
     }
     .empty-cart {
