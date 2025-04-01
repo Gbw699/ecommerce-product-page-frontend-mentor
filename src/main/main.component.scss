@@ -25,6 +25,14 @@
         height: 100%;
         border-radius: 13px;
         border: none;
+        transition: all 0.2s;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.7;
+        }
+        &:focus {
+          opacity: 0.7;
+        }
         img {
           animation: fadeIn 0.2s ease-in-out;
           @media (min-width: s.$ViewPortBreakpoint) {
@@ -32,11 +40,11 @@
           }
         }
       }
-      .btn-transparent-border {
-        border: 2px solid transparent;
+      .btn-transparent-outline {
+        outline: 2px solid transparent;
       }
       .selected {
-        border-color: s.$Orange;
+        outline: 2px solid s.$Orange;
         img {
           opacity: 0.3;
         }

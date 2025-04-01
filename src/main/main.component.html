@@ -1,7 +1,7 @@
 <div class="container">
   <section class="product-img-container">
     <div class="img-container">
-      <button class="img-btn">
+      <button class="img-btn btn-transparent-outline">
         @if (imgIndex() === 1 ) {
         <img
           src="./images/image-product-1.jpg"
@@ -60,7 +60,7 @@
     <div class="thumbnails-container">
       <div class="img-container">
         <button
-          class="img-btn btn-transparent-border"
+          class="img-btn btn-transparent-outline"
           [class.selected]="imgIndex() === 1"
           (click)="handleImgChangeWithThumbnail(1)"
         >
@@ -74,7 +74,7 @@
       </div>
       <div class="img-container">
         <button
-          class="img-btn btn-transparent-border"
+          class="img-btn btn-transparent-outline"
           [class.selected]="imgIndex() === 2"
           (click)="handleImgChangeWithThumbnail(2)"
         >
@@ -88,7 +88,7 @@
       </div>
       <div class="img-container">
         <button
-          class="img-btn btn-transparent-border"
+          class="img-btn btn-transparent-outline"
           [class.selected]="imgIndex() === 3"
           (click)="handleImgChangeWithThumbnail(3)"
         >
@@ -102,7 +102,7 @@
       </div>
       <div class="img-container">
         <button
-          class="img-btn btn-transparent-border"
+          class="img-btn btn-transparent-outline"
           [class.selected]="imgIndex() === 4"
           (click)="handleImgChangeWithThumbnail(4)"
         >
