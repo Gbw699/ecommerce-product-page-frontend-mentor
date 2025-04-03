@@ -32,7 +32,9 @@ export class MainComponent {
   ) {}
 
   handleLightbox() {
-    this.lightboxService.setLightboxFlag(true);
+    if (window.innerWidth >= 730) {
+      this.lightboxService.setLightboxFlag(true);
+    }
   }
 
   handleImgChange(action: string) {

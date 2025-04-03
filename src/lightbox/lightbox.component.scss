@@ -10,11 +10,16 @@
   border: none;
   align-items: center;
   .inner-container {
-    max-width: 40%;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (min-width: s.$ViewPortBreakpoint) {
+      max-width: 60%;
+    }
+    @media (min-width: s.$ViewPortBreakpointDesktop) {
+      max-width: min(40%, 650px);
+    }
     .close-btn {
       align-self: flex-end;
       margin-bottom: 1rem;
