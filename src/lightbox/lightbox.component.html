@@ -1,0 +1,149 @@
+<dialog class="container" [style.display]="lightboxFlag() ? 'flex' : 'none'">
+  <div class="inner-container">
+    <button class="close-btn" (click)="handleCloseLightbox()">
+      <svg
+        viewBox="0 0 14 15"
+        width="16"
+        height="auto"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+          fill="currentColor"
+          fill-rule="evenodd"
+        />
+      </svg>
+    </button>
+
+    <div class="img-container">
+      @if (imgIndex() === 1 ) {
+      <img
+        src="./images/image-product-1.jpg"
+        alt="Product image 1"
+        width="100%"
+        height="auto"
+      />
+      } @if (imgIndex() === 2 ) {
+      <img
+        src="./images/image-product-2.jpg"
+        alt="Product image 2"
+        width="100%"
+        height="auto"
+      />
+      }@if (imgIndex() === 3 ) {
+      <img
+        src="./images/image-product-3.jpg"
+        alt="Product image 3"
+        width="100%"
+        height="auto"
+      />
+      }@if (imgIndex() === 4 ) {
+      <img
+        src="./images/image-product-4.jpg"
+        alt="Product image 4"
+        width="100%"
+        height="auto"
+      />
+      }
+    </div>
+
+    <div class="btn-container">
+      @if (imgIndex() > 1) {
+      <button class="btn" (click)="handleImgChange('previous')">
+        <svg
+          viewBox="0 0 13 18"
+          width="10"
+          height="auto"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11 1 3 9l8 8"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+      }
+      <div></div>
+      @if (imgIndex() < 4) {
+
+      <button class="btn" (click)="handleImgChange('next')">
+        <svg
+          viewBox="0 0 13 18"
+          width="10"
+          height="auto"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m2 1 8 8-8 8"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            fill-rule="evenodd"
+          />
+        </svg>
+      </button>
+      }
+    </div>
+    <div class="thumbnails-container">
+      <div class="img-container">
+        <button
+          class="img-btn btn-transparent-outline"
+          [class.selected]="imgIndex() === 1"
+          (click)="handleImgChangeWithThumbnail(1)"
+        >
+          <img
+            src="./images/image-product-1-thumbnail.jpg"
+            alt="thumbnail 1"
+            width="100%"
+            height="auto"
+          />
+        </button>
+      </div>
+      <div class="img-container">
+        <button
+          class="img-btn btn-transparent-outline"
+          [class.selected]="imgIndex() === 2"
+          (click)="handleImgChangeWithThumbnail(2)"
+        >
+          <img
+            src="./images/image-product-2-thumbnail.jpg"
+            alt="thumbnail 2"
+            width="100%"
+            height="auto"
+          />
+        </button>
+      </div>
+      <div class="img-container">
+        <button
+          class="img-btn btn-transparent-outline"
+          [class.selected]="imgIndex() === 3"
+          (click)="handleImgChangeWithThumbnail(3)"
+        >
+          <img
+            src="./images/image-product-3-thumbnail.jpg"
+            alt="thumbnail 3"
+            width="100%"
+            height="auto"
+          />
+        </button>
+      </div>
+      <div class="img-container">
+        <button
+          class="img-btn btn-transparent-outline"
+          [class.selected]="imgIndex() === 4"
+          (click)="handleImgChangeWithThumbnail(4)"
+        >
+          <img
+            src="./images/image-product-4-thumbnail.jpg"
+            alt="thumbnail 4"
+            width="100%"
+            height="auto"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</dialog>
