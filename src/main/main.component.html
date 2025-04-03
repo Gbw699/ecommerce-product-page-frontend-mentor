@@ -1,7 +1,10 @@
 <div class="container">
   <section class="product-img-container">
     <div class="img-container">
-      <button class="img-btn btn-transparent-outline">
+      <button
+        class="img-btn btn-transparent-outline"
+        (click)="handleLightbox()"
+      >
         @if (imgIndex() === 1 ) {
         <img
           src="./images/image-product-1.jpg"
@@ -131,7 +134,7 @@
     </div>
     <div class="btn-container">
       <div class="units-container">
-        <button class="minus-btn" (click)="changeQuantity('decrease')">
+        <button (click)="changeQuantity('decrease')">
           <img
             src="./images/icon-minus.svg"
             alt="minus icon"
@@ -140,7 +143,7 @@
           />
         </button>
         <p class="units">{{ quantity() }}</p>
-        <button class="plus-btn" (click)="changeQuantity('increase')">
+        <button (click)="changeQuantity('increase')">
           <img
             src="./images/icon-plus.svg"
             alt="plus icon"
@@ -160,3 +163,4 @@
     </div>
   </section>
 </div>
+<!-- <app-lightbox></app-lightbox> -->

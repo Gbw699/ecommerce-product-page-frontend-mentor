@@ -46,7 +46,7 @@
         cursor: pointer;
         color: s.$Orange;
       }
-      &:focus {
+      &:focus-visible {
         outline: none;
         color: s.$Orange;
       }

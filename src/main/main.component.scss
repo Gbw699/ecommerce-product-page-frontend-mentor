@@ -30,7 +30,7 @@
           cursor: pointer;
           opacity: 0.7;
         }
-        &:focus {
+        &:focus-visible {
           opacity: 0.7;
         }
         img {
@@ -190,6 +190,14 @@
           background-color: transparent;
           padding: 0.5rem;
           display: flex;
+          outline: 2px solid transparent;
+          transition: all 0.2s;
+          &:hover {
+            cursor: pointer;
+          }
+          &:focus-visible {
+            outline-color: s.$Orange;
+          }
         }
         .units {
           margin: 0;
@@ -212,6 +220,15 @@
         font-weight: 700;
         background-color: s.$Orange;
         box-shadow: 0 10px 20px rgba($color: s.$Orange, $alpha: 0.3);
+        transition: all 0.2s;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.7;
+        }
+        &:focus-visible {
+          opacity: 0.7;
+          outline: none;
+        }
       }
     }
   }

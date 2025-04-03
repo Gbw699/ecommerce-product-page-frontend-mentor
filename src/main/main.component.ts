@@ -8,11 +8,14 @@ import {
 
 import { CartProductsService } from '../services/cart-products.service';
 import { MainImgService } from '../services/main-img.service';
+import { LightboxService } from '../services/lightbox.service';
+
+import { LightboxComponent } from '../lightbox/lightbox.component';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [],
+  imports: [LightboxComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
 })
@@ -24,8 +27,13 @@ export class MainComponent {
 
   constructor(
     private cartProductService: CartProductsService,
-    private mainImgService: MainImgService
+    private mainImgService: MainImgService,
+    private lightboxService: LightboxService
   ) {}
+
+  handleLightbox() {
+    this.lightboxService.setLightboxFlag(true);
+  }
 
   handleImgChange(action: string) {
     action === 'next'
